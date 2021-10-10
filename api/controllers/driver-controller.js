@@ -21,7 +21,7 @@ exports.checkForAmbulance = (req, res, next) => {
               .then((data) => {
                 console.log(data);
                 // if (distance < 500) {
-                //   socket.to(deviceId).emit({
+                //   socket.to(deviceId).emit("ambulanceData", {
                 //     haveToStop: true,
                 //     ambulanceData: {
                 //       vehicleNo: ambulance.vehicleNo,
