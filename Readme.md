@@ -1,8 +1,8 @@
 # Let Me Go
 
-<center>
-<img src="http://assets.stickpng.com/images/5afac8736554160a79bea11d.png"/>
-</center>
+<p align="center">
+<img src="./assets/logo.png"/>
+</p>
 
 Let Me Go is a mobile application which was build in order to notify vehicle drivers when an ambulance is near to them within a specific distance during traffics. I built this application as my project for **Hackeram** which is an online student run hackathon.
 
@@ -28,4 +28,4 @@ According to my experience I have seen lots of incidents where Ambulance drivers
 
 #
 
-<center><h2>Thank You!</h2></center>
+<p align="center"><h2 align="center">Thank You!</h2></p>
