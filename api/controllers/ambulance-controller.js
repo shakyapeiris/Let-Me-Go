@@ -145,17 +145,33 @@ exports.endMission = (req, res, next) => {
 };
 
 exports.postLocation = (req, res, next) => {
-  const ambulanceId = req.body.id;
-  const currLocation = req.body.currLocation;
-  Ambulance.findById(ambulanceId)
-    .then((result) => {
-      result.currLocation = currLocation;
+  // const ambulanceId = req.body.id;
+  // const currLocation = req.body.currLocation;
+  // Ambulance.findById(ambulanceId)
+  //   .then((result) => {
+  //     result.currLocation = currLocation;
 
-      result.save().then(() => {
-        res.send({ success: true, message: 'Location updated successfully' });
+  //     result.save().then(() => {
+  //       res.send({ success: true, message: 'Location updated successfully' });
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+  req.io.on('connection', (socket) => {
+    socket.on('update_location', ({ token, currLocation }) => {
+      jwt.verify(token, process.env.TOKEN_KEY, (err, decoded) => {
+        const vehicleNumber = decoded.vehicleNo;
+        Ambulance.findOne({ vehicleNo: vehicleNumber })
+          .then((result) => {
+            result.currLocation = currLocation;
+
+            result.save();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       });
-    })
-    .catch((err) => {
-      console.log(err);
     });
+  });
 };
