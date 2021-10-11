@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/screens/landing.dart';
 import 'package:mobile/screens/userHome.dart';
+import 'package:mobile/screens/ambulanceLogin.dart';
+import 'package:mobile/screens/ambulanceRegister.dart';
+import 'package:mobile/screens/ambulanceHome.dart';
+import 'package:mobile/screens/ambulanceNavigator.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +22,11 @@ class MyApp extends StatelessWidget {
         '/': (BuildContext context) => Scaffold(
               body: Landing(),
             ),
-        '/user': (BuildContext context) => UserHome()
+        '/user': (BuildContext context) => UserHome(),
+        '/ambulance/login': (BuildContext context) => AmbulanceLogin(),
+        '/ambulance/register': (BuildContext context) => AmbulanceReg(),
+        '/ambulance/home': (BuildContext context) => AmbulanceHome(),
+        '/ambulance/nav': (BuildContext context) => AmbulanceNav(),
       },
     );
   }
