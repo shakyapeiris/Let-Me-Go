@@ -17,6 +17,7 @@ dependencies:
   device_info: ^2.0.2
 
 dev_dependencies:
+  flutter_config: ^1.0.5
   flutter_test:
     sdk: flutter
 flutter:
