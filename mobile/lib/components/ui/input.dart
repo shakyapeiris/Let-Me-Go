@@ -30,53 +30,39 @@ class Input extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: double.infinity,
-        ),
-        Expanded(
-          child: Container(
-            height: 40.0,
-            margin: EdgeInsets.all(5.0),
-            padding: EdgeInsets.all(5.0),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: focused ? focusedColor : borderColor,
-                  width: 1,
-                ),
+    return Expanded(
+      flex: 1,
+      child: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: TextField(
+          keyboardType: type,
+          style: GoogleFonts.openSans(
+            color: textColor,
+            fontSize: 14.0,
+          ),
+          textAlign: TextAlign.left,
+          textAlignVertical: TextAlignVertical.bottom,
+          cursorColor: focusedColor,
+          focusNode: inputFocusNode,
+          controller: inputController,
+          decoration: InputDecoration(
+            border: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: borderColor,
               ),
             ),
-            child: TextField(
-              keyboardType: type,
-              style: GoogleFonts.openSans(
-                color: textColor,
-                fontSize: 14.0,
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: focusedColor,
               ),
-              textAlign: TextAlign.left,
-              cursorColor: focusedColor,
-              focusNode: inputFocusNode,
-              controller: inputController,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: placeholder,
-                hintStyle: GoogleFonts.openSans(
-                  color: placeholderColor,
-                ),
-              ),
+            ),
+            hintText: placeholder,
+            hintStyle: GoogleFonts.openSans(
+              color: placeholderColor,
             ),
           ),
         ),
-        hasError
-            ? Text(
-                errorMessage,
-                style: GoogleFonts.openSans(
-                  color: Colors.red,
-                ),
-              )
-            : Container()
-      ],
+      ),
     );
   }
 }
