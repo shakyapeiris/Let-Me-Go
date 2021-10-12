@@ -63,7 +63,7 @@ class Landing extends StatelessWidget {
                   NavCard(
                     image: 'images/hospital.png',
                     text: "Hospital",
-                    route: '/ambulance/login',
+                    route: '/ambulance/register',
                   ),
                   NavCard(
                     image: 'images/car.png',
