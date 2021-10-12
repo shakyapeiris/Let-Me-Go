@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Let me go',
-      initialRoute: '/',
+      initialRoute: '/ambulance/register',
       routes: {
         '/': (BuildContext context) => Scaffold(
               body: Landing(),
